@@ -12,3 +12,13 @@ Description of how to use data(values, particularly body joint position and orie
 
 ## Text
 ### 1. Introduce Kinect sdk installation website, data related site and References
+We Should use(install) Kinect SDK 2.0 to connect Kinect V2 sensor to PC
+
+(사이트 주소)
+
+Once the SDK has been installed, you can check the sensor status using various tools in Kinect Studio.
+
+
+(사이트 주소 및 사진 자료)
+
+You can find out various Classes, Methods, Structures, etc available in SDK code on this site.
