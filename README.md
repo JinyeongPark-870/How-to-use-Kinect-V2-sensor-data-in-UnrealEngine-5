@@ -13,6 +13,7 @@ Description of how to use data(values, particularly body joint position and orie
 
 
 ## Text
+<br>
 ### 1. Introduce Kinect sdk installation website, data related site and References
 We Should use(install) Kinect SDK 2.0 to connect Kinect V2 sensor to PC
 
@@ -26,6 +27,8 @@ Once the SDK has been installed, you can check the sensor status using various t
 You can find out various Classes, Methods, Structures, etc available in SDK code on this site.
 
 
+<br>
+<br>
 ### 2. How to find path to the relevant file (.lib, .h) after installed Kinect SDK
 After SDK installed, you can check the files and folders in the installed path.
 
@@ -34,6 +37,8 @@ This path is necessary when using the Unreal Engine later.
 (SDK 설치 경로 및 폴더 사진)
 
 
+<br>
+<br>
 ### 3. How to Use Unreal Engine / Creating build.cs, actor.h/.cpp
 
 Run Unreal Engine to create a new project (template is irrelevant)
@@ -43,7 +48,8 @@ Create C++ Actor in project.
 Create default Actor class or other Actor class that inherits default Actor.
 
 
-
+<br>
+<br>
 ### 4. Descriptions of build.cs, ~Actor.h/.cpp File and provide basic descriptions such as code and class/structure
 
 A simple description of the generated source files.
@@ -89,7 +95,8 @@ You can find out the results and errors of each mode of operation with HRESULT.
 
 
 
-
+<br>
+<br>
 ### 5. Apply written code (actor) in the Unreal Engine, create the c++ actor as a blue print actor and apply it to the level (spawn blueprint actor)
 
 After you save the code, build solution and create the C++ actor class into a blue print actor.
@@ -108,7 +115,8 @@ You can save the method's return value as a variable, or call the method from an
 
 
 
-
+<br>
+<br>
 ### 6. Examples of screen log output and examples of using various data Photographs, videos
 
 Now it's a way to make use of sensor data.
@@ -139,7 +147,8 @@ Additionally, a way to use the condition of hand.
 
 
 
-
+<br>
+<br>
 ### 7. Finish
 
 
@@ -147,7 +156,8 @@ Working on this project, I submitted a game of interface (NUI) and unreal engine
 
 
 
-
+<br>
+<br>
 ### 8. References
 
 (위의 인용 자료, 참고 사이트 등 링크 첨부)
