@@ -29,6 +29,7 @@ Once the SDK has been installed, you can check the sensor status using various t
 
 You can find out various Classes, Methods, Structures, etc available in SDK code on this site.
 
+[Kinect for Windows SDK 2.0 Microsoft Learn](https://learn.microsoft.com/en-us/previous-versions/windows/kinect/dn799271(v=ieb.10))
 
 <br>
 <br>
