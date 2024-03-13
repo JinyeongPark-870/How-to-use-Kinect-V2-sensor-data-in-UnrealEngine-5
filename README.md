@@ -127,6 +127,7 @@ You can find out the results and errors of each mode of operation with HRESULT.
 <br>
 <br>
 
+
 ### 5. Apply written code (actor) in the Unreal Engine, create the c++ actor as a blue print actor and apply it to the level (spawn blueprint actor)
 
 After you save the code, build solution and create the C++ actor class into a blue print actor.
@@ -143,6 +144,7 @@ You can save the method's return value as a variable, or call the method from an
 
 (사진)
 
+> We created an Unreal Engine Actor that can collect, process data from Kinect sensor and return them with method.
 > At the current level (map), you can call the method of the spawned actor(we made) to use sensor data at other actors, characters, and interfaces.
 
 <br>
