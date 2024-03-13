@@ -74,13 +74,11 @@ build.cs codes
 
 Write build.cs code to use Kinect.lib that you found earlier.
 
-(라이브러리 적용 코드)
-(경로 지정 코드)
 
 ```C#
 public SensorGame(ReadOnlyTargetRules Target) : base(Target)
 {
-    ...
+    //...
     PublicAdditionalLibraries.Add(Path.Combine(ProjectRoot, "Binaries/Win64/Kinect20.lib"));
 }
 public string ProjectRoot
