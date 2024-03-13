@@ -143,7 +143,7 @@ You can save the method's return value as a variable, or call the method from an
 
 (사진)
 
-
+> At the current level (map), you can call the method of the spawned actor(we made) to use sensor data at other actors, characters, and interfaces.
 
 <br>
 <br>
