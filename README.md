@@ -87,6 +87,8 @@ public string ProjectRoot
 }
 ```
 
+(추가 설명)
+
 Path designation methods can be written in various ways.
 
 [How to use after setting environment variables]
