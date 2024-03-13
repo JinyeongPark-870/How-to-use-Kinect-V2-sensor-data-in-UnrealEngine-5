@@ -21,6 +21,7 @@ We Should use(install) Kinect SDK 2.0 to connect Kinect V2 sensor to PC
 [Kinect for Windows SDK 2.0](https://www.microsoft.com/en-us/download/details.aspx?id=44561)
 
 <br>
+<br>
 
 Once the SDK has been installed, you can check the sensor status using various tools in Kinect Studio.
 
@@ -75,6 +76,18 @@ Write build.cs code to use Kinect.lib that you found earlier.
 
 (라이브러리 적용 코드)
 (경로 지정 코드)
+
+```C#
+public SensorGame(ReadOnlyTargetRules Target) : base(Target)
+{
+    ...
+    PublicAdditionalLibraries.Add(Path.Combine(ProjectRoot, "Binaries/Win64/Kinect20.lib"));
+}
+public string ProjectRoot
+{
+    get { return System.IO.Path.GetFullPath(System.IO.Path.Combine(ModuleDirectory, "../../")); }
+}
+```
 
 Path designation methods can be written in various ways.
 
