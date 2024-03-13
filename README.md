@@ -30,6 +30,7 @@ Once the SDK has been installed, you can check the sensor status using various t
 <img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d0c68b7c-284d-43e8-937f-d62b49de9ce0">
 
 <br>
+<br>
 
 You can find out various Functions, Structures, etc available in SDK code on this site.
 
