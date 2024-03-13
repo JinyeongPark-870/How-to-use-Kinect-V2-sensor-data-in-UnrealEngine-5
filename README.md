@@ -48,6 +48,7 @@ This path is necessary when using the Unreal Engine later.
 
 (SDK 설치 경로 및 폴더 사진)
 
+> Find installed Kinect SDK's .lib , .h with path
 
 <br>
 <br>
@@ -60,6 +61,7 @@ Create C++ Actor in project.
 
 Create default Actor class or other Actor class that inherits default Actor.
 
+> Create C++ Actor
 
 <br>
 <br>
