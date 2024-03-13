@@ -31,7 +31,7 @@ You can find out various Functions, Structures, etc available in SDK code on thi
 
 [Kinect for Windows SDK 2.0 Microsoft Learn](https://learn.microsoft.com/en-us/previous-versions/windows/kinect/dn799271(v=ieb.10))
 
-![2_kinectsdkRef](https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/c88b3dc4-7616-4094-9285-18097f5ce7de)
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/c88b3dc4-7616-4094-9285-18097f5ce7de" width = "50%" height = "50%">
 
 
 <br>
