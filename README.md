@@ -507,10 +507,17 @@ You can save the method's return value as a variable, or call the method from an
 
 (사진)
 
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/75c87030-6011-4bb3-821a-d6882dd49ea6" width = "50%" height = "50%"> <br>
-<img src = "" width = "50%" height = "50%"> <br>
-<img src = "" width = "50%" height = "50%"> <br>
-<img src = "" width = "50%" height = "50%"> <br>
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/75c87030-6011-4bb3-821a-d6882dd49ea6" width = "30%" height = "30%"> <br>
+> In another Blueprint Actor's Event Graph(another actor needs to get sensor data), create Get Actor of Class and connect to Begin Play. <br>
+> Set Actor Class to our Blueprint Actor <br>
+
+<br>
+
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/9dfe0695-bf8f-4253-aa73-ecf198237433" width = "30%" height = "30%"> <br>
+> We can call C++ Actor's function and get and save return value as variable. <br>
+
+<img src = "" width = "30%" height = "30%"> <br>
+<img src = "" width = "30%" height = "30%"> <br>
 
 
 > We created an Unreal Engine Actor that can collect, process data from Kinect sensor and return them with method.
