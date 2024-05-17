@@ -51,7 +51,7 @@ SDK install path
 
 > We can find installed Kinect SDK's .lib , .h <br>
 > <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/f0a6c15e-d81f-4cb7-8024-75fcb44bbfb2" width = "50%" height = "50%">
-> <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/40d421b1-3e39-40bf-8507-ac0388ff7b79" width = "50%" height = "50%">
+> <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/40d421b1-3e39-40bf-8507-ac0388ff7b79" width = "50%" height = "50%"> <br>
 > We use Kinect.lib , Kinect.h , Kinect.Face.h , Kinect.INPC.h
 
 <br>
@@ -110,15 +110,15 @@ Then load .lib file in build.cs <br>
 
 <img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/2476aeeb-966d-492c-9bb6-cbb76758a9bb" width="30%" height="30%">
 
-Path designation methods can be written in various ways.
-
-[How to use after setting environment variables]
+Path designation methods can be written in various ways. <br>
 
 header file codes <br>
 
+Copy and paste the files into the project's source folder (the same location as the actor you want to use). <br>
+<img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/b86e3aba-48a6-40b2-ba67-ad34f7963f61" width="30%" height="30%">
+
 You must include Kinect.h (other header files) in the header file first.
 
-Copy and paste the file into the project's source folder (the same location as the actor you want to use).
 
 And declare classes and variables to use.
 
