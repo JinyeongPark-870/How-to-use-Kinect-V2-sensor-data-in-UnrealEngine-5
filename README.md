@@ -492,6 +492,9 @@ Use that C++ actor to create a blue print actor.
 
 (사진)
 
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/8ab7658b-f917-41b8-b225-d6c7b8379a9a" width = "50%" height = "50%"> <br>
+Blueprint Class Name : KinectBodyActor_BP
+
 In the BluePrint Editor screen, you can immediately use the variables and methods you generated with c++ code.
 
 You can save the method's return value as a variable, or call the method from another actor.
