@@ -236,15 +236,15 @@ class SENSORGAME_API AKinectBodyActor : public AActor
 };
 ```
 > Array **joints** and **joint_orient** save joint data(position, orientation).
-#
+> #
 > **leftHandState** and **rightHandState** is for current hand state.
-#
+> #
 > Func **UpdateBodyPoints** updates current joint data(**joints**, **joint_orient**)
-#
+> #
 > **myHandState** is structure for hand data and **GetMyHand** function returns it.
-#
+> #
 > **ArrJoint** is structure array for joint data and **GetJoints** function returns it.
-#
+
 
 
 <br> .cpp codes <br>
