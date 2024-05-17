@@ -388,6 +388,7 @@ void AKinectBodyActor::Tick(float DeltaTime)
 
 	if (SUCCEEDED(hr)) {
 
+		// Body
 		for (int i = 0; i < _countof(ppBodies); i++) {
 
 			IBody* i_Body = i_Bodies[i];
@@ -411,6 +412,7 @@ void AKinectBodyActor::Tick(float DeltaTime)
 
 						if (SUCCEEDED(hr)) {
 
+							// Joint
 							for (int j = 0; j < _countof(joints); ++j) {
 
 								UpdateBodyPoints(j, joints[j].Position, joint_orient[j].Orientation);
@@ -435,6 +437,40 @@ void AKinectBodyActor::Tick(float DeltaTime)
 	}
 }
 ```
+
+> Tick repeats as many times as the observed number of bodies and stores joint data of body. <br>
+> After that, stores the data by repeating as many times as the number of body joints. <br>
+> this project assumes there is only one body. <br>
+> Joint Type <br>
+> [JointType](https://learn.microsoft.com/en-us/previous-versions/windows/kinect/dn758663(v=ieb.10))
+```C++
+0: "SpineBase"
+1: "SpineMid"
+2: "Neck"
+3: "Head"
+4: "ShoulderLeft"
+5: "ElbowLeft"
+6: "WristLeft"
+7: "HandLeft"
+8: "ShoulderRight"
+9: "ElbowRight"
+10: "WristRight"
+11: "HandRight"
+12: "HipLeft"
+13: "KneeLeft"
+14: "AnkleLeft"
+15: "FootLeft"
+16: "HipRight"
+17: "KneeRight"
+18: "AnkleRight"
+19: "FootRight"
+20: "SpineShoulder"
+21: "HandTipLeft"
+22: "ThumbLeft"
+23: "HandTipRight"
+24: "ThumbRight"
+```
+<br><br>
 
 Code, Method Description
 
