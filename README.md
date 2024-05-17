@@ -155,7 +155,7 @@ struct FKinectJointTransform {
 
 <br>
 
-> A structure for separately managing hand data
+> A structure for managing hand data
 ```C++
 USTRUCT(BlueprintType)
 struct FKinectCurHandStates {
@@ -182,9 +182,51 @@ struct FKinectCurHandStates {
 
 <br>
 
+> Header Class
+```C++
 
+UCLASS()
+class SENSORGAME_API AKinectBodyActor : public AActor
+{
+	GENERATED_BODY()
+	
+	~~~~~
+```
 
+> Interface and Function Declaration in Class
+```C++
+	IKinectSensor* i_KinectSensor;
+	ICoordinateMapper* i_CoordinateMapper;
+	IBodyFrameReader* i_BodyFrameReader;
 
+	void initialize();
+
+	// Joint array
+	Joint joints[JointType_Count];
+	JointOrientation joint_orient[JointType_Count];
+
+	// HandState var
+	HandState leftHandState = HandState_Unknown;
+	HandState rightHandState = HandState_Unknown;
+
+	// Data Update Func
+	void UpdateBodyPoints(int index, CameraSpacePoint jointPosition, Vector4 jointOrientation);
+
+	// Hand State Var and func
+	FKinectCurHandStates myHandState;
+
+	UFUNCTION(BlueprintCallable, Category = "Hand State Point")
+	FKinectCurHandStates GetMyHand();
+
+	// Array return func
+	UPROPERTY(BlueprintReadWrite)
+	TArray<FKinectJointTransform> ArrJoint;
+
+	UFUNCTION(BlueprintPure)
+	TArray<FKinectJointTransform> GetJoints();
+
+};
+```
 
 
 <br> .cpp codes <br>
