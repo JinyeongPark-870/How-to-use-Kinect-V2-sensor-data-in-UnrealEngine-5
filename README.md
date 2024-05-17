@@ -49,7 +49,7 @@ This path is necessary when using the Unreal Engine later.
 SDK install path
 => C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\
 
-> Find installed Kinect SDK's .lib , .h with path
+> Find installed Kinect SDK's .lib , .h with path <br>
 > <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/f0a6c15e-d81f-4cb7-8024-75fcb44bbfb2" width = "50%" height = "50%">
 > <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/40d421b1-3e39-40bf-8507-ac0388ff7b79" width = "50%" height = "50%">
 
