@@ -518,7 +518,7 @@ You can save the method's return value as a variable, or call the method from an
 
 #
 
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/a996ac87-3d4e-4c0d-9866-f12c6f455318" width = "30%" height = "30%"> <br>
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/a996ac87-3d4e-4c0d-9866-f12c6f455318" width = "45%" height = "45%"> <br>
 > Our function **GetJoints** returns structure array, so we can get array value with for loop. <br>
 
 #
