@@ -105,8 +105,10 @@ public string ProjectRoot
 
 <br>
 
-In my way, I put library file in project's binary folder. <hr>
-Then load .lib file in build.cs
+In my way, I put library file in project's binary folder. <br>
+Then load .lib file in build.cs <br>
+
+<img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/2476aeeb-966d-492c-9bb6-cbb76758a9bb" width="60%" height="60%">
 
 Path designation methods can be written in various ways.
 
