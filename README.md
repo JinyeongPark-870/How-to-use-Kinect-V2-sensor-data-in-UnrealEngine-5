@@ -542,26 +542,51 @@ Let's use two data types(Joint Position and Joint Orientation).
 
 (블루프린트 화면)
 
-As an example of using data, you can use position to roughly represent the location of a body joint, or you can create a vector with those coordinates to know the direction of a specific body part.
+<img src = "" width = "45%" height = "45%"> <br>
+
+(포지션 데이터 사용 사진)
+
+
+As an example of using data, we can use position to roughly represent the location of a body joint, or you can create a vector with those coordinates to know the direction of a specific body part.
+
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/a6c80eba-4486-4b02-aabc-153b06d5d892" width = "45%" height = "45%"> <br>
+> One way of saving each joint's data <br>
+
+<br>
 
 If we know the position and orientation of the body parts, we can create an algorithm for posture detection.
 
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/2620b4a0-53bc-44cb-9775-1b5c04e2c144" width = "45%" height = "45%"> <br>
+> Making vectors with some joints.
+> We can make left upper arm vector with left shoulder position and left elbow position.
+> For example, To check if left arm is stretched, we need to check left upper arm(left shoulder - left elbow) and left lower arm(left elbow - left wrist) vectors.
+
+<br>
+
 Various examples of utilizing the positions of body joints.
 
-(  )
+( 벡터값 사진 )
 
 The direction vectors of the shoulders, elbows, and hands let you know in which direction your hand is stretched and if you are bending.
 
-You can create direction vectors for your thighs through the positions of your knees and pelvis, And you can compare each other's positions to determine your posture.
+We can create direction vectors for your thighs through the positions of your knees and pelvis, And you can compare each other's positions to determine your posture.
 
-Or, you can use a combination of these data to determine a particular posture
+Or, we can use a combination of these data to determine a particular posture
 
-The orientation values allow you to create a rotation angle and apply it to the character model.
+(사진)
 
-These figures depend on the skeleton of the character model or the engine environment, which requires a fairly complex process. (We will not discuss this.)
+We can use orientation values to create a rotation angle and apply it to the character model.
+
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/be1bd39c-1b1f-4dfd-b708-965a485c26d3" width = "45%" height = "45%"> <br>
+> In character animation blueprint, we can use orientation data and edit character's mesh bone.
+
+(캐릭터 모델 트래킹 사진)
+
+These figures depend on the skeleton of the character model or the engine environment, which requires a fairly complex process. (I will not discuss this.)
 
 Additionally, a way to use the condition of hand.
 
+(hand data 사용 사진)
 
 
 <br>
