@@ -118,6 +118,7 @@ Copy and paste the files into the project's source folder (the same location as 
 
 You must include Kinect.h (other header files) in the header file first.
 
+<br>
 
 And declare classes and variables to use.
 
@@ -134,7 +135,8 @@ And declare classes and variables to use.
 #include "KinectBodyActor.generated.h"
 ```
 
-<br> Class and Structure <br> <br>
+<br> Class and Structure
+<br> <br>
 
 > Declare a structure for storing body tracking data(Position and Orientation)
 ```C++
@@ -153,7 +155,7 @@ struct FKinectJointTransform {
 ```
 
 
-<br>
+<br><br>
 
 > A structure for managing hand data
 ```C++
@@ -180,7 +182,7 @@ struct FKinectCurHandStates {
 };
 ```
 
-<br>
+<br><br>
 
 > Header Class
 ```C++
@@ -193,6 +195,8 @@ class SENSORGAME_API AKinectBodyActor : public AActor
 	~~~~~
 ```
 
+<br><br>
+
 > Interface and Function Declaration in Class
 ```C++
 	IKinectSensor* i_KinectSensor;
@@ -200,7 +204,11 @@ class SENSORGAME_API AKinectBodyActor : public AActor
 	IBodyFrameReader* i_BodyFrameReader;
 
 	void initialize();
+```
+<br><br>
 
+> Other variable, array, function declaration
+```C++
 	// Joint array
 	Joint joints[JointType_Count];
 	JointOrientation joint_orient[JointType_Count];
@@ -212,13 +220,13 @@ class SENSORGAME_API AKinectBodyActor : public AActor
 	// Data Update Func
 	void UpdateBodyPoints(int index, CameraSpacePoint jointPosition, Vector4 jointOrientation);
 
-	// Hand State Var and func
+	// Hand State var and return func
 	FKinectCurHandStates myHandState;
 
 	UFUNCTION(BlueprintCallable, Category = "Hand State Point")
 	FKinectCurHandStates GetMyHand();
 
-	// Array return func
+	// Array and return func
 	UPROPERTY(BlueprintReadWrite)
 	TArray<FKinectJointTransform> ArrJoint;
 
@@ -227,6 +235,7 @@ class SENSORGAME_API AKinectBodyActor : public AActor
 
 };
 ```
+> 
 
 
 <br> .cpp codes <br>
