@@ -534,7 +534,7 @@ You can save the method's return value as a variable, or call the method from an
 <br>
 <br>
 
-### 6. Examples of using various data Photographs, videos
+### 6. Examples of using various data
 
 Now it's a way to make use of sensor data.
 
@@ -607,10 +607,8 @@ With hand state and hand position, we can controll cursor and make cursor click.
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/058da363-a252-4a8b-ac82-777f0d85f8c6" width = "45%" height = "45%"> <br>
 > We can make cursor click function with hand state(left or right) <br>
+> Hand State 3 means that hand is closed. <br>
 
-<img src = "" width = "45%" height = "45%"> <br>
-
-<img src = "" width = "45%" height = "45%"> <br>
 
 <br>
 <br>
