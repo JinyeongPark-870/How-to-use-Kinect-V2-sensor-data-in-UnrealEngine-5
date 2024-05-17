@@ -89,7 +89,7 @@ Write build.cs code to use Kinect.lib that you found earlier.
 
 > 'SensorGame' is my unreal engine project name
 
-<img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/ac56fbf8-160b-4cb7-b6d1-565e8f053826" width="60%" height="60%">
+<img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/ac56fbf8-160b-4cb7-b6d1-565e8f053826" width="70%" height="70%">
 
 ```C#
 public SensorGame(ReadOnlyTargetRules Target) : base(Target)
