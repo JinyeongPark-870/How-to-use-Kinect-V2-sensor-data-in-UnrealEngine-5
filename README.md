@@ -511,14 +511,17 @@ You can save the method's return value as a variable, or call the method from an
 > In another Blueprint Actor's Event Graph(another actor needs to get sensor data), create Get Actor of Class and connect to Begin Play. <br>
 > Set Actor Class to our Blueprint Actor <br>
 
-<br><br>
+#
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/9dfe0695-bf8f-4253-aa73-ecf198237433" width = "45%" height = "45%"> <br>
 > We can call C++ Actor's function and get and save return value as variable. <br>
 
-<img src = "" width = "30%" height = "30%"> <br>
-<img src = "" width = "30%" height = "30%"> <br>
+#
 
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/a996ac87-3d4e-4c0d-9866-f12c6f455318" width = "30%" height = "30%"> <br>
+> Our function **GetJoints** returns structure array, so we can get array value with for loop. <br>
+
+#
 
 > We created an Unreal Engine Actor that can collect, process data from Kinect sensor and return them with method.
 > At the current level (map), you can call the method of the spawned actor(we made) to use sensor data at other actors, characters, and interfaces.
@@ -526,7 +529,7 @@ You can save the method's return value as a variable, or call the method from an
 <br>
 <br>
 
-### 6. Examples of screen log output and examples of using various data Photographs, videos
+### 6. Examples of using various data Photographs, videos
 
 Now it's a way to make use of sensor data.
 
