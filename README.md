@@ -18,14 +18,14 @@ Description of how to use data(values, particularly body joint position and orie
 ### 1. Introduce Kinect sdk installation website, data related site and References
 We Should use(install) Kinect SDK 2.0 to connect Kinect V2 sensor to PC
 
-[Kinect for Windows SDK 2.0](https://www.microsoft.com/en-us/download/details.aspx?id=44561)
+[Kinect for Windows SDK 2.0](https://www.microsoft.com/en-us/download/details.aspx?id=44561){target="_blank"}
 
 <br>
 <br>
 
 Once the SDK has been installed, you can check the sensor status using various tools in Kinect Studio.
 
-![1_kinectsdktools](https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/7ba57d29-f82f-4afb-8872-179ee197a4fa) &nbsp;
+![1_kinectsdktools](https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/7ba57d29-f82f-4afb-8872-179ee197a4fa){target="_blank"} &nbsp;
 <img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d0c68b7c-284d-43e8-937f-d62b49de9ce0">
 
 <br>
