@@ -441,7 +441,7 @@ void AKinectBodyActor::Tick(float DeltaTime)
 > Tick repeats as many times as the observed number of bodies and stores joint data of body. <br>
 > After that, stores the data by repeating as many times as the number of body joints. <br>
 > this project assumes there is only one body. <br>
-> Joint Type <br>
+
 > [JointType](https://learn.microsoft.com/en-us/previous-versions/windows/kinect/dn758663(v=ieb.10))
 ```C++
 0: "SpineBase"
