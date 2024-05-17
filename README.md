@@ -65,10 +65,11 @@ Create C++ Actor in project.
 
 Create default Actor class or other Actor class that inherits default Actor.
 
-> Create C++ Actor
+> Create C++ Actor <br>
 > In project source folder, there are Actor's header and source files <br>
 > Dir => ~\Unreal Projects\ 'Project Name' \Source\ 'Project Name' \ <br>
-> <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/51466921-823d-4636-a0cb-2a9af23a674e" width = "10%" height = "10%">
+> <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/51466921-823d-4636-a0cb-2a9af23a674e" width = "15%" height = "15%"> <br>
+> My Actor's Name => KinectBodyActor
 
 <br>
 <br>
