@@ -556,11 +556,6 @@ As an example of using data, we can use position to roughly represent the locati
 
 If we know the position and orientation of the body parts, we can create an algorithm for posture detection.
 
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/2620b4a0-53bc-44cb-9775-1b5c04e2c144" width = "45%" height = "45%"> <br>
-> Making vectors with some joints.
-> We can make left upper arm vector with left shoulder position and left elbow position.
-> For example, To check if left arm is stretched, we need to check left upper arm(left shoulder - left elbow) and left lower arm(left elbow - left wrist) vectors.
-
 <br>
 
 Various examples of utilizing the positions of body joints.
@@ -569,9 +564,25 @@ Various examples of utilizing the positions of body joints.
 
 The direction vectors of the shoulders, elbows, and hands let you know in which direction your hand is stretched and if you are bending.
 
-We can create direction vectors for your thighs through the positions of your knees and pelvis, And you can compare each other's positions to determine your posture.
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/2620b4a0-53bc-44cb-9775-1b5c04e2c144" width = "45%" height = "45%"> <br>
+> Making vectors with some joints.
 
-Or, we can use a combination of these data to determine a particular posture
+We can also create direction vectors for your thighs through the positions of your knees and pelvis.
+<br>
+
+And we can use a combination of these data(positions and vectors) to determine a particular posture
+<br>
+
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d6be9b10-dd30-4570-9d3a-f3dcfc1805be" width = "45%" height = "45%"> <br>
+> Custom pose T-Pose needs to check Left and Right arm vectors. <br>
+> I use average value of left and right arm vectors when i stretch arms to compare and check both arms are stretched. <br>
+> Making vector length with subtracting present vector value from average value. <br>
+> Vector length value means error value. And we can set range of it to determine posture. <br>
+
+<br>
+
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/20141cc7-b2ac-4ad7-880d-6438cf71616c" width = "45%" height = "45%"> <br>
+> With more specific posture, we need more data to compare. <br>
 
 (사진)
 
