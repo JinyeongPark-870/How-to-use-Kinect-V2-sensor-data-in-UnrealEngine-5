@@ -134,8 +134,9 @@ And declare classes and variables to use.
 #include "KinectBodyActor.generated.h"
 ```
 
-<br> Class and Structure <br>
+<br> Class and Structure <br> <br>
 
+> Declare a structure for storing body tracking data(Position and Orientation)
 ```C++
 USTRUCT(BlueprintType)
 struct FKinectJointTransform {
@@ -151,9 +152,10 @@ struct FKinectJointTransform {
 };
 ```
 
-> Declare a structure for storing body tracking data(Position and Orientation)
+
 <br>
 
+> A structure for separately managing hand data
 ```C++
 USTRUCT(BlueprintType)
 struct FKinectCurHandStates {
@@ -178,7 +180,6 @@ struct FKinectCurHandStates {
 };
 ```
 
-> A structure for separately managing hand data
 <br>
 
 
