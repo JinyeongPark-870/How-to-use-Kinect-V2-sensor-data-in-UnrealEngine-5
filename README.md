@@ -253,6 +253,189 @@ The default header file is automatically included, and write code using variable
 
 (코드)
 
+<br>
+
+```C++
+#include "KinectBodyActor.h"
+
+AKinectBodyActor::AKinectBodyActor()
+{
+	~
+}
+
+void AKinectBodyActor::BeginPlay()
+{
+	Super::BeginPlay();
+
+	// Set init Array size
+	ArrJoint.SetNum(_countof(joints));
+}
+```
+
+
+<br><br>
+> initialize func
+> #
+> Check sensor's state with HRESULT
+```C++
+void AKinectBodyActor::initialize(){
+	//UE_LOG(LogTemp, Display, TEXT("- Kinect Actor - Initialize"));
+
+	HRESULT hr;
+	hr = GetDefaultKinectSensor(&i_KinectSensor);
+
+	if (FAILED(hr)) {
+		UE_LOG(LogTemp, Display, TEXT("- Kinect Actor - Get Kinect Sensor Failed"));
+		return;
+	}
+
+	if (i_KinectSensor) {
+
+		IBodyFrameSource* i_BodyFrameSource = NULL;
+
+		hr = i_KinectSensor->Open();
+
+		if (SUCCEEDED(hr)) {
+			hr = i_KinectSensor->get_CoordinateMapper(&i_CoordinateMapper);
+		}
+		if (SUCCEEDED(hr)) {
+			hr = i_KinectSensor->get_BodyFrameSource(&i_BodyFrameSource);
+		}
+		if (SUCCEEDED(hr)) {
+			hr = i_BodyFrameSource->OpenReader(&i_BodyFrameReader);
+		}
+		if (!I_KinectSensor || FAILED(hr)) {
+			return;
+		}
+		return;
+	}
+}
+```
+
+<br><br>
+> updateBodyPoints func
+> #
+> update and save sensor data
+```C++
+void AKinectBodyActor::UpdateBodyPoints(int index, CameraSpacePoint jointPosition, Vector4 jointOrientation){
+
+
+	FKinectJointTransform& tmpJoint = ArrJoint[index];
+
+	/* Make orientation with Quat
+	FQuat tmpQuat = FQuat(-jointOrientation.z,jointOrientation.x,-jointOrientation.y,jointOrientation.w);
+	~~~~~~
+	FRotator tmpRotator;
+	tmpRotator = ~;
+	tmpJoint.Orientation = tmpRotator;
+	*/
+
+	tmpJoint.Location.Set(jointPosition.Z * 100.f, -jointPosition.X * 100.f, jointPosition.Y * 100.f);
+}
+```
+> parameter **index** is for current joint's number.
+> #
+> paramter **jointPosition** is current joint's position data.
+> #
+> parameter **jointOrientation** is current joint's orientation data.
+> #
+> Use structure (**ArrJoint** array value) as reference var and edit array value
+
+
+<br><br>
+> Other func
+```C++
+FKinectCurHandStates AKinectBodyActor::GetMyHand(){
+
+	return myHandState;
+}
+TArray<FKinectJointTransform> AKinectBodyActor::GetJoints(){
+
+	return ArrJoint;
+}
+```
+> Func **GetMyHand** returns **myhandState** structure. <br>
+> Func **GetJoints** returns structure array **ArrJoint**.
+> #
+> Both function callable at other Blueprint Actors.
+
+<br><br>
+> Tick
+```C++
+void AKinectBodyActor::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	initialize();
+
+	if (!I_BodyFrameReader) {
+		//UE_LOG(LogTemp, Display, TEXT("- Kinect Actor - Body Frame Reader Failed"));
+		return;
+	}
+
+	IBodyFrame* i_BodyFrame = NULL;
+
+	IBody* i_Bodies[BODY_COUNT] = { 0, };
+
+	HRESULT hr = i_BodyFrameReader->AcquireLatestFrame(&i_BodyFrame);
+
+	if (FAILED(hr)) {
+		//UE_LOG(LogTemp, Display, TEXT("- Kinect Actor - Acquire Latest Frame Failed"));
+	}
+	if (SUCCEEDED(hr)) {
+		hr = i_BodyFrame->GetAndRefreshBodyData(_countof(i_Bodies), i_Bodies);
+	}	
+
+	if (SUCCEEDED(hr)) {
+
+		for (int i = 0; i < _countof(ppBodies); i++) {
+
+			IBody* i_Body = i_Bodies[i];
+
+			if (i_Body) {
+
+				BOOLEAN b_Tracked = false;
+
+				hr = i_Body->get_IsTracked(&b_Tracked);
+
+				if (SUCCEEDED(hr) && b_Tracked) {
+
+					i_Body->get_HandLeftState(&leftHandState);
+					i_Body->get_HandRightState(&rightHandState);
+
+					hr = i_Body->GetJoints(_countof(joints), joints);
+
+					if (SUCCEEDED(hr)) {
+
+						hr = i_Body->GetJointOrientations(_countof(joints), joint_orient);
+
+						if (SUCCEEDED(hr)) {
+
+							for (int j = 0; j < _countof(joints); ++j) {
+
+								UpdateBodyPoints(j, joints[j].Position, joint_orient[j].Orientation);
+
+								// left hand update
+								if (j == 7) {
+									myHandState.LHandState = leftHandState;
+
+									myHandState.LHandPoint = FVector(joints[j].Position.X, joints[j].Position.Y, joints[j].Position.Z);
+								}
+								// right hand update
+								if (j == 11) {
+									myHandState.RHandState = rightHandState;
+									myHandState.RHandPoint = FVector(joints[j].Position.X, joints[j].Position.Y, joints[j].Position.Z);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+```
+
 Code, Method Description
 
 You can find out the results and errors of each mode of operation with HRESULT.
