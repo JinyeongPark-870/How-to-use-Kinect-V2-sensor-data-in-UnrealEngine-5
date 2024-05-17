@@ -523,7 +523,7 @@ You can save the method's return value as a variable, or call the method from an
 
 #
 
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/03362854-4705-41b3-b430-4d7430cf1add" width = "45%" height = "45%"> <br>
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/03362854-4705-41b3-b430-4d7430cf1add" width = "55%" height = "55%"> <br>
 > Aslo, we can use our function **GetMyHand** to get hand state data. <br>
 
 #
