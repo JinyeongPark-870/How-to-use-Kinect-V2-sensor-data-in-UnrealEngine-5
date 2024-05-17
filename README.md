@@ -150,7 +150,7 @@ struct FKinectJointTransform {
 
 };
 ```
-<br>
+
 > Declare a structure for storing body tracking data(Position and Orientation)
 <br>
 
@@ -177,7 +177,7 @@ struct FKinectCurHandStates {
 	FVector RHandPoint = FVector::ZeroVector;
 };
 ```
-<br>
+
 > A structure for separately managing hand data
 <br>
 
@@ -186,7 +186,7 @@ struct FKinectCurHandStates {
 
 
 
-.cpp codes <br>
+<br> .cpp codes <br>
 
 The default header file is automatically included, and write code using variables in header file.
 
