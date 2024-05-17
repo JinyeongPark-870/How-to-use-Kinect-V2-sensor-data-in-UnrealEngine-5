@@ -597,8 +597,20 @@ These figures depend on the skeleton of the character model or the engine enviro
 
 Additionally, a way to use the condition of hand.
 
+With hand state and hand position, we can controll cursor and make cursor click.
+
 (hand data 사용 사진)
 
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/03c9f4a0-0ad3-4eee-b372-8622ecf1a4fa" width = "45%" height = "45%"> <br>
+> Get hand data in other actor and set cursor position at player character controller. <br>
+> And need to adjust values to fit the screen size. <br>
+
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/058da363-a252-4a8b-ac82-777f0d85f8c6" width = "45%" height = "45%"> <br>
+> We can make cursor click function with hand state(left or right) <br>
+
+<img src = "" width = "45%" height = "45%"> <br>
+
+<img src = "" width = "45%" height = "45%"> <br>
 
 <br>
 <br>
