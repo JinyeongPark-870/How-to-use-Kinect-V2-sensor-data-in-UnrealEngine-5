@@ -507,11 +507,11 @@ You can save the method's return value as a variable, or call the method from an
 
 (사진)
 
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/75c87030-6011-4bb3-821a-d6882dd49ea6" width = "30%" height = "30%">
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/75c87030-6011-4bb3-821a-d6882dd49ea6" width = "30%" height = "30%"> <br>
 > In another Blueprint Actor's Event Graph(another actor needs to get sensor data), create Get Actor of Class and connect to Begin Play. <br>
 > Set Actor Class to our Blueprint Actor <br>
 
-<br>
+<br><br>
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/9dfe0695-bf8f-4253-aa73-ecf198237433" width = "45%" height = "45%"> <br>
 > We can call C++ Actor's function and get and save return value as variable. <br>
