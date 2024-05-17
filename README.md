@@ -113,6 +113,16 @@ Path designation methods can be written in various ways. <br>
 
 header file codes <br>
 
+```C++
+#include <ShlObj.h>
+#include <strsafe.h>
+#include "Kinect.h"    // Add
+
+#include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
+#include "KinectBodyActor.generated.h"
+```
+
 Copy and paste the files into the project's source folder (the same location as the actor you want to use). <br>
 <img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/b86e3aba-48a6-40b2-ba67-ad34f7963f61" width="30%" height="30%">
 
