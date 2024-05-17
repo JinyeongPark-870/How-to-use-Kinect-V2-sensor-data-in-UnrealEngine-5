@@ -103,13 +103,16 @@ public string ProjectRoot
 }
 ```
 
-(추가 설명)
+<br>
+
+In my way, I put library file in project's binary folder. <hr>
+Then load .lib file in build.cs
 
 Path designation methods can be written in various ways.
 
 [How to use after setting environment variables]
 
-header file codes
+header file codes <br>
 
 You must include Kinect.h (other header files) in the header file first.
 
@@ -122,7 +125,7 @@ And declare classes and variables to use.
 
 Class and Structure Description
 
-.cpp codes
+.cpp codes <br>
 
 The default header file is automatically included, and write code using variables in header file.
 
