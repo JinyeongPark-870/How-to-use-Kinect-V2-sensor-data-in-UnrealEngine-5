@@ -113,16 +113,6 @@ Path designation methods can be written in various ways. <br>
 
 header file codes <br>
 
-```C++
-#include <ShlObj.h>
-#include <strsafe.h>
-#include "Kinect.h"    // Add
-
-#include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
-#include "KinectBodyActor.generated.h"
-```
-
 Copy and paste the files into the project's source folder (the same location as the actor you want to use). <br>
 <img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/b86e3aba-48a6-40b2-ba67-ad34f7963f61" width="30%" height="30%">
 
@@ -133,8 +123,68 @@ And declare classes and variables to use.
 
 (코드)
 
+<br> Headers <br>
+```C++
+#include <ShlObj.h>
+#include <strsafe.h>
+#include "Kinect.h"    // Add
 
-Class and Structure Description
+#include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
+#include "KinectBodyActor.generated.h"
+```
+
+<br> Class and Structure <br>
+
+```C++
+USTRUCT(BlueprintType)
+struct FKinectJointTransform {
+
+	GENERATED_BODY()
+
+	UPROPERTY(BlueprintReadOnly)
+	FVector Location;
+
+	UPROPERTY(BlueprintReadOnly)
+	FRotator Orientation;
+
+};
+```
+<br>
+> Declare a structure for storing body tracking data(Position and Orientation)
+<br>
+
+```C++
+USTRUCT(BlueprintType)
+struct FKinectCurHandStates {
+
+	GENERATED_BODY()
+
+	// Left Hand : 7
+	// Right Hand : 11
+	// HandState { 0 : UnKnown , 1 : Not Tracked , 2 : Open , 3 : Closed , 4 : Lasso }
+
+	UPROPERTY(BlueprintReadWrite)
+	int32 LHandState = HandState_Unknown;
+
+	UPROPERTY(BlueprintReadWrite)
+	int32 RHandState = HandState_Unknown;
+
+	UPROPERTY(BlueprintReadWrite)
+	FVector LHandPoint = FVector::ZeroVector;
+
+	UPROPERTY(BlueprintReadWrite)
+	FVector RHandPoint = FVector::ZeroVector;
+};
+```
+<br>
+> A structure for separately managing hand data
+<br>
+
+
+
+
+
 
 .cpp codes <br>
 
