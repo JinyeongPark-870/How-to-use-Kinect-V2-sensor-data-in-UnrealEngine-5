@@ -15,6 +15,8 @@ Description of how to use data(values, particularly body joint position and orie
 ## Text
 <br>
 
+<!-- 1 -->
+
 ### 1. Introduce Kinect sdk installation website, data related site and References
 We Should use(install) Kinect SDK 2.0 to connect Kinect V2 sensor to PC
 
@@ -40,6 +42,8 @@ You can find out various Functions, Structures, etc available in SDK code on thi
 <br>
 <br>
 
+<!-- 2 -->
+
 ### 2. How to find path to the relevant file (.lib, .h) after installed Kinect SDK
 After SDK installed, you can check the files and folders in the installed path.
 
@@ -55,6 +59,8 @@ SDK install path
 
 <br>
 <br>
+
+<!-- 3 -->
 
 ### 3. How to Use Unreal Engine / Creating build.cs, actor.h/.cpp
 
@@ -72,6 +78,8 @@ Create default Actor class or other Actor class that inherits default Actor.
 
 <br>
 <br>
+
+<!-- 4 -->
 
 ### 4. Descriptions of build.cs, ~Actor.h/.cpp File and provide basic descriptions such as code and class/structure
 
@@ -481,6 +489,7 @@ You can find out the results and errors of each mode of operation with HRESULT.
 <br>
 <br>
 
+<!-- 5 -->
 
 ### 5. Apply written code (actor) in the Unreal Engine, create the c++ actor as a blue print actor and apply it to the level (spawn blueprint actor)
 
@@ -533,6 +542,7 @@ You can save the method's return value as a variable, or call the method from an
 
 <br>
 <br>
+<!-- 6 -->
 
 ### 6. Examples of using various data
 
@@ -593,7 +603,21 @@ We can use orientation values to create a rotation angle and apply it to the cha
 
 (캐릭터 모델 트래킹 사진)
 
+We can move character model(bone) like body-tracking with orientation data.
+
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/8169c4ee-2c25-4ce3-9c9b-aa5a563c4ccd" width = "45%" height = "45%"> <br>
+> This is one example of controlling model and gesture detecting. <br>
+> ~~(Picture quality is bad but) It need to stretch both arms to get the true value.~~
+
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/87f1ea28-4762-466f-9530-7bfe885b7fd6" width = "45%" height = "45%"> <br>
+> And Also we can control character in Unreal Engine level(map), That means we can use mesh collision.
+> I made one example of using collision with character(mesh) and static mesh actor.
+
 These figures depend on the skeleton of the character model or the engine environment, which requires a fairly complex process. (I will not discuss this.)
+
+
+
+<hr>
 
 Additionally, a way to use the condition of hand.
 
@@ -607,11 +631,13 @@ With hand state and hand position, we can controll cursor and make cursor click.
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/058da363-a252-4a8b-ac82-777f0d85f8c6" width = "45%" height = "45%"> <br>
 > We can make cursor click function with hand state(left or right) <br>
-> Hand State 3 means that hand is closed. <br>
+> Hand State value 3 means hand is closed. <br>
 
 
 <br>
 <br>
+
+<!-- 7 -->
 
 ### 7. Finish
 
