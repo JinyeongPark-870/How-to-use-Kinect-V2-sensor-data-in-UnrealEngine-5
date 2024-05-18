@@ -395,7 +395,6 @@ void AKinectBodyActor::Tick(float DeltaTime)
 	}	
 
 	if (SUCCEEDED(hr)) {
-
 		// Body
 		for (int i = 0; i < _countof(ppBodies); i++) {
 
@@ -483,7 +482,7 @@ void AKinectBodyActor::Tick(float DeltaTime)
 24: "ThumbRight"
 ```
 
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d6a9f01b-ff64-48c2-8124-c546d687c8cd" width = "45%" height = "45%">
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d6a9f01b-ff64-48c2-8124-c546d687c8cd" width = "45%" height = "45%" align="center">
 </details>
 <br><br>
 
