@@ -644,10 +644,17 @@ With hand state and hand position, we can controll cursor and make cursor click.
 > Get hand data in other actor and set cursor position at player character controller. <br>
 > And need to adjust values to fit the screen size. <br>
 
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d8b5fe44-0ac9-4293-8c76-9051ed86fe65" width = "45%" height = "45%"> <br>
+> Simple example actor for representing hand states. <br>
+> Actor follows hand position and color changes with hand state. <br>
+
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/058da363-a252-4a8b-ac82-777f0d85f8c6" width = "45%" height = "45%"> <br>
 > We can make cursor click function with hand state(left or right) <br>
 > Hand State value 3 means hand is closed. <br>
 
+
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d8574d76-0bcc-4804-abd0-8b5e293ded28" width = "45%" height = "45%"> <br>
+> Example of using hand state data and click function with custom button actor. <br>
 
 <br>
 <br>
