@@ -481,8 +481,9 @@ void AKinectBodyActor::Tick(float DeltaTime)
 23: "HandTipRight"
 24: "ThumbRight"
 ```
-
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d6a9f01b-ff64-48c2-8124-c546d687c8cd" width = "45%" height = "45%" align="center">
+<p align="center">
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d6a9f01b-ff64-48c2-8124-c546d687c8cd" width = "45%" height = "45%" >
+</p>
 </details>
 <br><br>
 
