@@ -62,7 +62,7 @@ SDK install path
 
 <!-- 3 -->
 
-### 3. How to Use Unreal Engine / Creating build.cs, actor.h/.cpp
+### 3. Create project and Actor with C++ (.h/.cpp)
 
 Run Unreal Engine to create a new project (template is irrelevant)
 
@@ -124,13 +124,10 @@ public string ProjectRoot
 
 <br>
 
-And declare classes and variables to use.
-
 header file codes <br>
 
-You must include Kinect.h (other header files) in actor's header file first.
+> Must include **Kinect.h** at actor's header file first.
 
-(코드)
 
 <br> Headers <br>
 ```C++
@@ -142,11 +139,14 @@ You must include Kinect.h (other header files) in actor's header file first.
 #include "GameFramework/Actor.h"
 #include "KinectBodyActor.generated.h"
 ```
+#
 
 <br> Class and Structure
-<br> <br>
+<br>
 
-> Declare a structure for storing body tracking data(Position and Orientation)
+> Declare a structure for storing body tracking data(Position and Orientation) <br>
+> Location : Vector (X, Y, Z) <br>
+> Orientation : Rotator (X, Y, Z, W) <br>
 ```C++
 USTRUCT(BlueprintType)
 struct FKinectJointTransform {
@@ -161,20 +161,17 @@ struct FKinectJointTransform {
 
 };
 ```
-
+#
 
 <br><br>
 
-> A structure for managing hand data
+> A structure for managing hand data <br>
+> HandState { 0 : UnKnown , 1 : Not Tracked , 2 : Open , 3 : Closed , 4 : Lasso } <br>
 ```C++
 USTRUCT(BlueprintType)
 struct FKinectCurHandStates {
 
 	GENERATED_BODY()
-
-	// Left Hand : 7
-	// Right Hand : 11
-	// HandState { 0 : UnKnown , 1 : Not Tracked , 2 : Open , 3 : Closed , 4 : Lasso }
 
 	UPROPERTY(BlueprintReadWrite)
 	int32 LHandState = HandState_Unknown;
@@ -189,10 +186,11 @@ struct FKinectCurHandStates {
 	FVector RHandPoint = FVector::ZeroVector;
 };
 ```
+#
 
 <br><br>
 
-> Header Class
+> Inside Header Class
 ```C++
 
 UCLASS()
@@ -202,6 +200,7 @@ class SENSORGAME_API AKinectBodyActor : public AActor
 	
 	~~~~~
 ```
+#
 
 <br><br>
 
@@ -213,6 +212,8 @@ class SENSORGAME_API AKinectBodyActor : public AActor
 
 	void initialize();
 ```
+#
+
 <br><br>
 
 > Other variable, array, function declaration
@@ -244,25 +245,20 @@ class SENSORGAME_API AKinectBodyActor : public AActor
 };
 ```
 > Array **joints** and **joint_orient** save joint data(position, orientation).
-> #
 > **leftHandState** and **rightHandState** is for current hand state.
-> #
 > Func **UpdateBodyPoints** updates current joint data(**joints**, **joint_orient**)
-> #
 > **myHandState** is structure for hand data and **GetMyHand** function returns it.
-> #
 > **ArrJoint** is structure array for joint data and **GetJoints** function returns it.
 
+#
 
 
 <br> .cpp codes <br>
 
-The default header file is automatically included, and write code using variables in header file.
-
-(코드)
 
 <br>
 
+> Generator and BeginPlay function
 ```C++
 #include "KinectBodyActor.h"
 
@@ -280,11 +276,12 @@ void AKinectBodyActor::BeginPlay()
 }
 ```
 
+#
 
 <br><br>
+
 > initialize func
-> #
-> Check sensor's state with HRESULT
+> Checking Kinect sensor's state with function
 ```C++
 void AKinectBodyActor::initialize(){
 	//UE_LOG(LogTemp, Display, TEXT("- Kinect Actor - Initialize"));
@@ -320,9 +317,10 @@ void AKinectBodyActor::initialize(){
 }
 ```
 
+#
+
 <br><br>
 > updateBodyPoints func
-> #
 > update and save sensor data
 ```C++
 void AKinectBodyActor::UpdateBodyPoints(int index, CameraSpacePoint jointPosition, Vector4 jointOrientation){
@@ -342,13 +340,11 @@ void AKinectBodyActor::UpdateBodyPoints(int index, CameraSpacePoint jointPositio
 }
 ```
 > parameter **index** is for current joint's number.
-> #
 > paramter **jointPosition** is current joint's position data.
-> #
 > parameter **jointOrientation** is current joint's orientation data.
-> #
 > Use structure (**ArrJoint** array value) as reference var and edit array value
 
+#
 
 <br><br>
 > Other func
@@ -364,8 +360,9 @@ TArray<FKinectJointTransform> AKinectBodyActor::GetJoints(){
 ```
 > Func **GetMyHand** returns **myhandState** structure. <br>
 > Func **GetJoints** returns structure array **ArrJoint**.
-> #
 > Both function callable at other Blueprint Actors.
+
+#
 
 <br><br>
 > Tick
@@ -392,8 +389,7 @@ void AKinectBodyActor::Tick(float DeltaTime)
 	}
 	if (SUCCEEDED(hr)) {
 		hr = i_BodyFrame->GetAndRefreshBodyData(_countof(i_Bodies), i_Bodies);
-	}	
-
+	}
 	if (SUCCEEDED(hr)) {
 		// Body
 		for (int i = 0; i < _countof(ppBodies); i++) {
@@ -403,7 +399,6 @@ void AKinectBodyActor::Tick(float DeltaTime)
 			if (i_Body) {
 
 				BOOLEAN b_Tracked = false;
-
 				hr = i_Body->get_IsTracked(&b_Tracked);
 
 				if (SUCCEEDED(hr) && b_Tracked) {
@@ -427,7 +422,6 @@ void AKinectBodyActor::Tick(float DeltaTime)
 								// left hand update
 								if (j == 7) {
 									myHandState.LHandState = leftHandState;
-
 									myHandState.LHandPoint = FVector(joints[j].Position.X, joints[j].Position.Y, joints[j].Position.Z);
 								}
 								// right hand update
@@ -449,10 +443,12 @@ void AKinectBodyActor::Tick(float DeltaTime)
 > After that, stores the data by repeating as many times as the number of body joints. <br>
 > this project assumes there is only one body. <br>
 
+#
+
 <details>
-<summary>JointType</summary>
+<summary>JointType in Kinect SDK</summary>
 	
-> [Joint Type Ref](https://learn.microsoft.com/en-us/previous-versions/windows/kinect/dn758663(v=ieb.10))
+> [Joint Type Enum](https://learn.microsoft.com/en-us/previous-versions/windows/kinect/dn758663(v=ieb.10))
 	
 ```C++
 0: "SpineBase"
@@ -482,7 +478,7 @@ void AKinectBodyActor::Tick(float DeltaTime)
 24: "ThumbRight"
 ```
 <p align="center">
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d6a9f01b-ff64-48c2-8124-c546d687c8cd" width = "45%" height = "45%" >
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d6a9f01b-ff64-48c2-8124-c546d687c8cd" width = "65%" height = "65%" >
 </p>
 </details>
 <br><br>
@@ -498,76 +494,65 @@ You can find out the results and errors of each mode of operation with HRESULT.
 
 <!-- 5 -->
 
-### 5. Apply written code (actor) in the Unreal Engine, create the c++ actor as a blue print actor and apply it to the level (spawn blueprint actor)
+### 5. Apply written code (actor) in the Unreal Engine, create Blueprint Actor based on C++ Actor and place on the level
 
-After you save the code, build solution and create the C++ actor class into a blue print actor.
+In Unreal Engine, we can make Blueprint Actor based on C++ Actor easily.
 
-Why create with a Blueprint Actor? : Simply, it's easier to see and edit.
+Why create as Blueprint Actor? : Simply, it's easier to see and edit.
 
-Use that C++ actor to create a blue print actor.
-
-(사진)
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/8ab7658b-f917-41b8-b225-d6c7b8379a9a" width = "50%" height = "50%"> <br>
-Blueprint Class Name : KinectBodyActor_BP <br>
 
-
-> Create Blueprint Actor and just place it on map(anywhere) <br>
+> Blueprint Class Name : KinectBodyActor_BP <br>
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/c92c6706-dfee-48a1-bb11-d96e6c04ad93" width = "50%" height = "50%"> <br>
-
-
-In the BluePrint Editor screen, you can immediately use the variables and methods you generated with c++ code.
-
-You can save the method's return value as a variable, or call the method from another actor.
-
-(사진)
-
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/75c87030-6011-4bb3-821a-d6882dd49ea6" width = "30%" height = "30%"> <br>
-> In another Blueprint Actor's Event Graph(another actor needs to get sensor data), create Get Actor of Class and connect to Begin Play. <br>
-> Set Actor Class to our Blueprint Actor <br>
+> Place Blueprint Actor anywhere on level(map) <br>
 
 #
 
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/9dfe0695-bf8f-4253-aa73-ecf198237433" width = "45%" height = "45%"> <br>
+In the BluePrint Editor screen, you can immediately use the variables and methods you generated with c++ code.
+
+You can save function return value as a variable, or call the method from another actor.
+
+
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/75c87030-6011-4bb3-821a-d6882dd49ea6" width = "40%" height = "40%">
+&nbsp;
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/9dfe0695-bf8f-4253-aa73-ecf198237433" width = "50%" height = "50%"> <br>
+
+> In another Blueprint Actor's Event graph(another actor which needs to get sensor data), create **Get Actor of Class** and connect to **Begin Play**. <br>
+> Set Actor Class as our Blueprint Actor(Kinect Sensor Actor). <br>
 > We can call C++ Actor's function and get and save return value as variable. <br>
 
 #
 
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/a996ac87-3d4e-4c0d-9866-f12c6f455318" width = "45%" height = "45%"> <br>
-> Our function **GetJoints** returns structure array, so we can get array value with for loop. <br>
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/a996ac87-3d4e-4c0d-9866-f12c6f455318" width = "55%" height = "55%"> <br>
+> Our function **GetJoints** returns structure array and we can approach array value with for-each loop. <br>
 
 #
 
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/03362854-4705-41b3-b430-4d7430cf1add" width = "55%" height = "55%"> <br>
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/03362854-4705-41b3-b430-4d7430cf1add" width = "65%" height = "65%"> <br>
 > Aslo, we can use our function **GetMyHand** to get hand state data. <br>
 
 #
 
-> We created an Unreal Engine Actor that can collect, process data from Kinect sensor and return them with method.
-> At the current level (map), you can call the method of the spawned actor(we made) to use sensor data at other actors, characters, and interfaces.
+We created an Unreal Engine Actor that can collect, process data from Kinect sensor and return them with method. <br>
+At the current level (map), you can call the method of the spawned actor(we made) to use sensor data at other actors, characters, and interfaces.
 
 <br>
 <br>
+
 <!-- 6 -->
 
-### 6. Examples of using various data
+### 6. Examples of using kinect Sensor data
 
-Now it's a way to make use of sensor data.
+Here are several ways to use sensor data.
 
-Let's use two data types(Joint Position and Joint Orientation).
+We can use two types of data(Joint Position and Joint Orientation). <br>
 
-(블루프린트 화면)
-
-<img src = "" width = "45%" height = "45%"> <br>
-
-(포지션 데이터 사용 사진)
-
-
-As an example of using data, we can use position to roughly represent the location of a body joint, or you can create a vector with those coordinates to know the direction of a specific body part.
+As an example of using data, we can use position data to roughly represent the location of each body joints, or create some vectors with those coordinates to know direction of specific body part.
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/a6c80eba-4486-4b02-aabc-153b06d5d892" width = "45%" height = "45%">
-&nbsp;
+&nbsp; &nbsp;
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/9a06101c-e718-473b-839b-5f49d9f9fe34" width = "45%" height = "45%"> <br>
 
 > One way of saving each joint's data and representing each joint's position. <br>
@@ -575,28 +560,24 @@ As an example of using data, we can use position to roughly represent the locati
 
 #
 
-If we know the position and orientation of the body parts, we can create an algorithm for posture detection.
+If we know the position and orientation of the body parts, we can make an algorithm for posture(gesture) detection. <br>
 
-<br>
+Various examples of utilizing the positions of body joints. <br>
 
-Various examples of utilizing the positions of body joints.
-
-( 벡터값 사진 )
-
-The direction vectors of the shoulders, elbows, and hands let you know in which direction your hand is stretched and if you are bending.
+We can make upper leg direction vectors with our thighs through the positions of pelvis and our knees. <br>
+The direction vectors made up of shoulders, elbows, and hands let you know in which direction your hand is stretched or bended.
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/2620b4a0-53bc-44cb-9775-1b5c04e2c144" width = "45%" height = "45%"> <br>
 > Making vectors with some joints.
 
-We can also create direction vectors for your thighs through the positions of your knees and pelvis.
+
 <br>
 
-And we can use a combination of these data(positions and vectors) to determine a particular posture
-<br>
+And we can use a combination of these data(positions and vectors) to determine a particular posture(gesture). <br>
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d6be9b10-dd30-4570-9d3a-f3dcfc1805be" width = "45%" height = "45%"> <br>
 > Custom pose T-Pose needs to check Left and Right arm vectors. <br>
-> I use average value of left and right arm vectors when i stretch arms to compare and check both arms are stretched. <br>
+> I used average value of left and right arms' vector when i stretch arms to compare and check both arms are stretched. <br>
 > Making vector length with subtracting present vector value from average value. <br>
 > Vector length value means error value. And we can set range of it to determine posture. <br>
 
@@ -605,9 +586,9 @@ And we can use a combination of these data(positions and vectors) to determine a
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/20141cc7-b2ac-4ad7-880d-6438cf71616c" width = "45%" height = "45%"> <br>
 > With more specific posture, we need more data to compare. <br>
 
-(사진)
+#
 
-We can use orientation values to create a rotation angle and apply it to the character model. <br>
+We can use joint orientation values to create a rotation angle and apply it to the character model. <br>
 Then, we can move character model(bone) like body-tracking with orientation data. <br>
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/be1bd39c-1b1f-4dfd-b708-965a485c26d3" width = "45%" height = "45%">
@@ -615,46 +596,48 @@ Then, we can move character model(bone) like body-tracking with orientation data
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/dc6b6054-d5a7-4a3d-8d1e-d3644507c56e" width = "45%" height = "45%"> <br>
 
 > In character animation blueprint, we can use orientation data and edit character's mesh bone. <br>
-
-(캐릭터 모델 트래킹 사진)
-
+> In picture, Joints(array)'s orientation value and Orientation(array)'s value are same. <br>
 
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/8169c4ee-2c25-4ce3-9c9b-aa5a563c4ccd" width = "45%" height = "45%"> <br>
 > This is one example of controlling model and gesture detecting. <br>
-> ~~(Picture quality is bad but) It need to stretch both arms to get the true value.~~
+> ~~(Picture quality is bad but) It need to stretch both arms to get the true value.~~ <br>
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/87f1ea28-4762-466f-9530-7bfe885b7fd6" width = "45%" height = "45%"> <br>
-> And Also we can control character in Unreal Engine level(map), That means we can use mesh collision.
-> I made one example of using collision with character(mesh) and static mesh actor.
-
-These figures depend on the skeleton of the character model or the engine environment, which requires a fairly complex process. (I will not discuss this.)
+> And Also we can control character in Unreal Engine level(map), That means we can use mesh collision. <br>
+> I made one example of using collision with character(mesh) and static mesh actor. <br>
 
 
+> These figures depend on the skeleton of the character model or the engine environment, which requires a fairly complex process. (I will not discuss this.) <br>
 
-<hr>
+#
 
-Additionally, a way to use the condition of hand.
-
-With hand state and hand position, we can controll cursor and make cursor click.
-
-(hand data 사용 사진)
+Additionally, there's one way to use the condition of hand. <br>
+With hand state and hand position, we can control cursor and make it work similar to clicks. <br>
+<br>
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/03c9f4a0-0ad3-4eee-b372-8622ecf1a4fa" width = "45%" height = "45%"> <br>
-> Get hand data in other actor and set cursor position at player character controller. <br>
+> We can get hand data with our function in other actor and set cursor position at player character controller class. <br>
 > And need to adjust values to fit the screen size. <br>
+
+<br>
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d8b5fe44-0ac9-4293-8c76-9051ed86fe65" width = "45%" height = "45%"> <br>
 > Simple example actor for representing hand states. <br>
-> Actor follows hand position and color changes with hand state. <br>
+> Actor follows hand position and changes mesh color with hand state. <br>
 
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/058da363-a252-4a8b-ac82-777f0d85f8c6" width = "45%" height = "45%"> <br>
+<br>
+
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/058da363-a252-4a8b-ac82-777f0d85f8c6" width = "55%" height = "55%"> <br>
 > We can make cursor click function with hand state(left or right) <br>
 > Hand State value 3 means hand is closed. <br>
 
+<br>
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d8574d76-0bcc-4804-abd0-8b5e293ded28" width = "45%" height = "45%"> <br>
 > Example of using hand state data and click function with custom button actor. <br>
+> I made a function that allows the actor which overlapping with the cursor to react when hand is closed(clench). <br>
+> Delay about 1 second. <br>
 
 <br>
 <br>
