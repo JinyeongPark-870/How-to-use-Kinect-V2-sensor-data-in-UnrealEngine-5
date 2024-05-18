@@ -567,10 +567,11 @@ Let's use two data types(Joint Position and Joint Orientation).
 As an example of using data, we can use position to roughly represent the location of a body joint, or you can create a vector with those coordinates to know the direction of a specific body part.
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/a6c80eba-4486-4b02-aabc-153b06d5d892" width = "45%" height = "45%">
-&nbsp;
+
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/9a06101c-e718-473b-839b-5f49d9f9fe34" width = "45%" height = "45%">
 <br>
 > One way of saving each joint's data and representing each joint's position. <br>
+
 
 
 
