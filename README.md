@@ -109,26 +109,26 @@ public string ProjectRoot
     get { return System.IO.Path.GetFullPath(System.IO.Path.Combine(ModuleDirectory, "../../")); }
 }
 ```
-
 <br>
 
-In my way, I put library file in project's binary folder. <br>
-Then load .lib file in build.cs <br>
+> Path designation methods can be written in various ways. <br>
 
 <img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/2476aeeb-966d-492c-9bb6-cbb76758a9bb" width="30%" height="30%">
+&nbsp;
+<img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/b86e3aba-48a6-40b2-ba67-ad34f7963f61" width="30%" height="30%"> <br>
 
-Path designation methods can be written in various ways. <br>
 
-header file codes <br>
+> In my way, I put library file in project's binary folder then, load .lib file with build.cs <br>
+> Copy and paste each files into the project's source folder (the same location as the actor you want to use). <br>
 
-Copy and paste the files into the project's source folder (the same location as the actor you want to use). <br>
-<img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/b86e3aba-48a6-40b2-ba67-ad34f7963f61" width="30%" height="30%">
-
-You must include Kinect.h (other header files) in the header file first.
 
 <br>
 
 And declare classes and variables to use.
+
+header file codes <br>
+
+You must include Kinect.h (other header files) in actor's header file first.
 
 (코드)
 
