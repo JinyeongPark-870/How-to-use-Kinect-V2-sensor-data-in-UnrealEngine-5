@@ -450,8 +450,10 @@ void AKinectBodyActor::Tick(float DeltaTime)
 > After that, stores the data by repeating as many times as the number of body joints. <br>
 > this project assumes there is only one body. <br>
 
-> [JointType](https://learn.microsoft.com/en-us/previous-versions/windows/kinect/dn758663(v=ieb.10))
-```C++
+<details>
+	<summary>JointType</summary>
+	> [JointType](https://learn.microsoft.com/en-us/previous-versions/windows/kinect/dn758663(v=ieb.10))
+	```C++
 0: "SpineBase"
 1: "SpineMid"
 2: "Neck"
@@ -477,7 +479,9 @@ void AKinectBodyActor::Tick(float DeltaTime)
 22: "ThumbLeft"
 23: "HandTipRight"
 24: "ThumbRight"
-```
+	```
+	<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d6a9f01b-ff64-48c2-8124-c546d687c8cd" width = "45%" height = "45%">
+</details>
 <br><br>
 
 Code, Method Description
