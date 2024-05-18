@@ -568,12 +568,12 @@ As an example of using data, we can use position to roughly represent the locati
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/a6c80eba-4486-4b02-aabc-153b06d5d892" width = "45%" height = "45%">
 &nbsp;
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/9a06101c-e718-473b-839b-5f49d9f9fe34" width = "45%" height = "45%">
-<br>
-One way of saving each joint's data and representing each joint's position. <br>
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/9a06101c-e718-473b-839b-5f49d9f9fe34" width = "45%" height = "45%"> <br>
+
+> One way of saving each joint's data and representing each joint's position. <br>
 
 
-<br>
+#
 
 If we know the position and orientation of the body parts, we can create an algorithm for posture detection.
 
@@ -610,9 +610,10 @@ And we can use a combination of these data(positions and vectors) to determine a
 We can use orientation values to create a rotation angle and apply it to the character model. <br>
 Then, we can move character model(bone) like body-tracking with orientation data. <br>
 
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/be1bd39c-1b1f-4dfd-b708-965a485c26d3" width = "45%" height = "45%"/>
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/be1bd39c-1b1f-4dfd-b708-965a485c26d3" width = "45%" height = "45%">
+&nbsp;
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/dc6b6054-d5a7-4a3d-8d1e-d3644507c56e" width = "45%" height = "45%"> <br>
-> In character animation blueprint, we can use orientation data and edit character's mesh bone.
+In character animation blueprint, we can use orientation data and edit character's mesh bone.
 
 (캐릭터 모델 트래킹 사진)
 
