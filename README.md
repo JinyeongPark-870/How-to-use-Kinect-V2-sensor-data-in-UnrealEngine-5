@@ -610,8 +610,7 @@ And we can use a combination of these data(positions and vectors) to determine a
 We can use orientation values to create a rotation angle and apply it to the character model. <br>
 Then, we can move character model(bone) like body-tracking with orientation data. <br>
 
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/be1bd39c-1b1f-4dfd-b708-965a485c26d3" width = "45%" height = "45%">
-　
+<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/be1bd39c-1b1f-4dfd-b708-965a485c26d3" width = "45%" height = "45%"/>
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/dc6b6054-d5a7-4a3d-8d1e-d3644507c56e" width = "45%" height = "45%"> <br>
 > In character animation blueprint, we can use orientation data and edit character's mesh bone.
 
