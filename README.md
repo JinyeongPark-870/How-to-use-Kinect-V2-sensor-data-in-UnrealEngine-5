@@ -570,7 +570,7 @@ As an example of using data, we can use position to roughly represent the locati
 &nbsp;
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/9a06101c-e718-473b-839b-5f49d9f9fe34" width = "45%" height = "45%">
 <br>
-One way of saving each joint's data and representing each joint's position. <br>
+> One way of saving each joint's data and representing each joint's position. <br>
 
 
 
