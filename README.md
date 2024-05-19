@@ -18,7 +18,7 @@ Description of how to use data(values, particularly body joint position and orie
 <!-- 1 -->
 
 ### 1. Introduce Kinect sdk installation website, data related site and References
-We Should use(install) Kinect SDK 2.0 to connect Kinect V2 sensor to PC
+We Should install Kinect SDK 2.0 to connect Kinect V2 sensor to PC
 
 [Kinect for Windows SDK 2.0](https://www.microsoft.com/en-us/download/details.aspx?id=44561)
 <br>
@@ -32,7 +32,7 @@ Once the SDK has been installed, you can check the sensor status using various t
 <br>
 <br>
 
-You can find out various Functions, Structures, etc available in SDK code on this site.
+You can find out various Functions, Structures, etc available in SDK on this site.
 
 [Kinect for Windows SDK 2.0 Microsoft Learn](https://learn.microsoft.com/en-us/previous-versions/windows/kinect/dn799271(v=ieb.10))
 
@@ -44,15 +44,17 @@ You can find out various Functions, Structures, etc available in SDK code on thi
 
 <!-- 2 -->
 
-### 2. How to find path to the relevant file (.lib, .h) after installed Kinect SDK
-After SDK installed, you can check the files and folders in the installed path.
+### 2. How to find path to the relevant files (.lib, .h)
 
-This path is necessary when using the Unreal Engine later.
+<br>
 
-SDK install path
-=> C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\
+After SDK installed, you can check the files and folders in the installed path. <br>
+This path is necessary when using the Unreal Engine later. <br>
 
-> We can find installed Kinect SDK's .lib , .h <br>
+**SDK install path** <br>
+=> C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\ <br>
+
+> We can find Kinect SDK's **.lib** , **.h** files. <br>
 > <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/3a5f6d79-c8ec-4c1d-ad44-bb0860e4b94b" width = "50%" height = "50%">
 > <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/e45f7002-2639-435c-b4f3-a47ab3b9303b" width = "50%" height = "50%"> <br>
 > We use Kinect.lib , Kinect.h , Kinect.Face.h , Kinect.INPC.h
@@ -62,41 +64,39 @@ SDK install path
 
 <!-- 3 -->
 
-### 3. Create project and Actor with C++ (.h/.cpp)
+### 3. Create Unreal project and Actor with C++ (.h/.cpp)
+<br>
 
-Run Unreal Engine to create a new project (template is irrelevant)
+Run Unreal Engine and create a new game project (template is irrelevant) <br>
+Create a C++ Actor in project. <br>
+Create default Actor class or other Actor class that inherits default Actor. <br>
 
-Create C++ Actor in project.
-
-Create default Actor class or other Actor class that inherits default Actor.
-
-> Create C++ Actor <br>
 > In project source folder, there are Actor's header and source files <br>
 > Dir => ~\Unreal Projects\ 'Project Name' \Source\ 'Project Name' \ <br>
 > <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/51466921-823d-4636-a0cb-2a9af23a674e" width = "15%" height = "15%"> <br>
-> My Actor's Name => KinectBodyActor
+> My example Actor's Name => **KinectBodyActor** <br>
 
 <br>
 <br>
 
 <!-- 4 -->
 
-### 4. Descriptions of build.cs, ~Actor.h/.cpp File and provide basic descriptions such as code and class/structure
+### 4. Descriptions of build.cs, ~Actor.h/.cpp File
 
-A simple description of the generated source files.
+<br>
+A simple description of the generated source files. <br>
+**Build.cs** file is related to the project build. <br>
+You can add various modules, link library files and set paths with it. <br>
 
-The Build.cs file is related to the project build.
-You can add various modules, link library files and set paths with it.
+**.h .cpp** files are the header file and source file of the actor using in the project. <br>
 
-.h .cpp is the header file, source file of the actor to be used in the project. If you have basic knowledge of C++, you can use it right away.
+<br>
+build.cs codes <br>
 
-build.cs codes
+Write **build.cs** code to use **Kinect.lib** that you found earlier. <br>
 
-Write build.cs code to use Kinect.lib that you found earlier.
-
-> 'SensorGame' is my unreal engine project name
-
-<img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/ac56fbf8-160b-4cb7-b6d1-565e8f053826" width="70%" height="70%">
+> **SensorGame** is my example Unreal project's name <br>
+<img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/ac56fbf8-160b-4cb7-b6d1-565e8f053826" width="70%" height="70%"> <br>
 
 ```C#
 public SensorGame(ReadOnlyTargetRules Target) : base(Target)
@@ -118,7 +118,7 @@ public string ProjectRoot
 <img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/b86e3aba-48a6-40b2-ba67-ad34f7963f61" width="30%" height="30%"> <br>
 
 
-> In my way, I put library file in project's binary folder then, load .lib file with build.cs <br>
+> In my way, I put library file in project's binary folder then, load **.lib** file with **build.cs** <br>
 > Copy and paste each files into the project's source folder (the same location as the actor you want to use). <br>
 
 
@@ -144,9 +144,9 @@ header file codes <br>
 <br> Class and Structure
 <br>
 
-> Declare a structure for storing body tracking data(Position and Orientation) <br>
-> Location : Vector (X, Y, Z) <br>
-> Orientation : Rotator (X, Y, Z, W) <br>
+> Declare a structure for storing body tracking data(Position and Orientation values) <br>
+> **Location** : Vector (X, Y, Z) <br>
+> **Orientation** : Rotator (X, Y, Z, W) <br>
 ```C++
 USTRUCT(BlueprintType)
 struct FKinectJointTransform {
@@ -244,11 +244,11 @@ class SENSORGAME_API AKinectBodyActor : public AActor
 
 };
 ```
-> Array **joints** and **joint_orient** save joint data(position, orientation).
-> **leftHandState** and **rightHandState** is for current hand state.
-> Func **UpdateBodyPoints** updates current joint data(**joints**, **joint_orient**)
-> **myHandState** is structure for hand data and **GetMyHand** function returns it.
-> **ArrJoint** is structure array for joint data and **GetJoints** function returns it.
+> Array **joints** and **joint_orient** save joint data(position, orientation). <br>
+> **leftHandState** and **rightHandState** is for current hand state. <br>
+> Function **UpdateBodyPoints** updates current joint data(**joints**, **joint_orient**). <br>
+> **myHandState** is structure for hand data and **GetMyHand** function returns it. <br>
+> **ArrJoint** is structure array for joint data and **GetJoints** function returns it. <br>
 
 #
 
@@ -280,8 +280,8 @@ void AKinectBodyActor::BeginPlay()
 
 <br><br>
 
-> initialize func
-> Checking Kinect sensor's state with function
+> initialize func <br>
+> Checking Kinect sensor's state with function <br>
 ```C++
 void AKinectBodyActor::initialize(){
 	//UE_LOG(LogTemp, Display, TEXT("- Kinect Actor - Initialize"));
@@ -320,8 +320,8 @@ void AKinectBodyActor::initialize(){
 #
 
 <br><br>
-> updateBodyPoints func
-> update and save sensor data
+> **UpdateBodyPoints** func <br>
+> Update and save sensor data <br>
 ```C++
 void AKinectBodyActor::UpdateBodyPoints(int index, CameraSpacePoint jointPosition, Vector4 jointOrientation){
 
@@ -339,10 +339,10 @@ void AKinectBodyActor::UpdateBodyPoints(int index, CameraSpacePoint jointPositio
 	tmpJoint.Location.Set(jointPosition.Z * 100.f, -jointPosition.X * 100.f, jointPosition.Y * 100.f);
 }
 ```
-> parameter **index** is for current joint's number.
-> paramter **jointPosition** is current joint's position data.
-> parameter **jointOrientation** is current joint's orientation data.
-> Use structure (**ArrJoint** array value) as reference var and edit array value
+> parameter **index** is for current joint's number. <br>
+> paramter **jointPosition** is current joint's position data. <br>
+> parameter **jointOrientation** is current joint's orientation data. <br>
+> Use structure (**ArrJoint** array value) as reference var and edit array value. <br>
 
 #
 
@@ -359,13 +359,13 @@ TArray<FKinectJointTransform> AKinectBodyActor::GetJoints(){
 }
 ```
 > Func **GetMyHand** returns **myhandState** structure. <br>
-> Func **GetJoints** returns structure array **ArrJoint**.
-> Both function callable at other Blueprint Actors.
+> Func **GetJoints** returns structure array **ArrJoint**. <br>
+> Both function callable at other Blueprint Actors. <br>
 
 #
 
 <br><br>
-> Tick
+> Tick function
 ```C++
 void AKinectBodyActor::Tick(float DeltaTime)
 {
@@ -392,7 +392,7 @@ void AKinectBodyActor::Tick(float DeltaTime)
 	}
 	if (SUCCEEDED(hr)) {
 		// Body
-		for (int i = 0; i < _countof(ppBodies); i++) {
+		for (int i = 0; i < _countof(i_Bodies); i++) {
 
 			IBody* i_Body = i_Bodies[i];
 
@@ -439,8 +439,9 @@ void AKinectBodyActor::Tick(float DeltaTime)
 }
 ```
 
-> Tick repeats as many times as the observed number of bodies and stores joint data of body. <br>
+> In Tick function, for loop repeats as many times as the observed number of bodies and stores joint data of body. <br>
 > After that, stores the data by repeating as many times as the number of body joints. <br>
+> count of bodies * count of joints(25) <br>
 > this project assumes there is only one body. <br>
 
 #
@@ -483,23 +484,18 @@ void AKinectBodyActor::Tick(float DeltaTime)
 </details>
 <br><br>
 
-Code, Method Description
+Code, Method Description <br>
+You can find out the results and errors with HRESULT function. <br>
 
-You can find out the results and errors of each mode of operation with HRESULT.
-
-
-
-<br>
 <br>
 
 <!-- 5 -->
 
 ### 5. Apply written code (actor) in the Unreal Engine, create Blueprint Actor based on C++ Actor and place on the level
 
-In Unreal Engine, we can make Blueprint Actor based on C++ Actor easily.
+In Unreal Engine, we can make Blueprint Actor based on C++ Actor. <br>
 
-Why create as Blueprint Actor? : Simply, it's easier to see and edit.
-
+Why create as Blueprint Actor? : Simply, it's easier to see and edit. <br>
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/8ab7658b-f917-41b8-b225-d6c7b8379a9a" width = "50%" height = "50%"> <br>
 
@@ -510,9 +506,9 @@ Why create as Blueprint Actor? : Simply, it's easier to see and edit.
 
 #
 
-In the BluePrint Editor screen, you can immediately use the variables and methods you generated with c++ code.
+In the BluePrint Editor screen, you can immediately use the variables and methods you generated with c++ code. <br>
 
-You can save function return value as a variable, or call the method from another actor.
+You can save function return value as a variable, or call the method from another actor. <br>
 
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/75c87030-6011-4bb3-821a-d6882dd49ea6" width = "40%" height = "40%">
@@ -545,11 +541,9 @@ At the current level (map), you can call the method of the spawned actor(we made
 
 ### 6. Examples of using kinect Sensor data
 
-Here are several ways to use sensor data.
-
+Here are several ways to use sensor data. <br>
 We can use two types of data(Joint Position and Joint Orientation). <br>
-
-As an example of using data, we can use position data to roughly represent the location of each body joints, or create some vectors with those coordinates to know direction of specific body part.
+As an example of using data, we can use position data to roughly represent the location of each body joints, or create some vectors with those coordinates to know direction of specific body part. <br>
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/a6c80eba-4486-4b02-aabc-153b06d5d892" width = "45%" height = "45%">
 &nbsp; &nbsp;
@@ -565,7 +559,7 @@ If we know the position and orientation of the body parts, we can make an algori
 Various examples of utilizing the positions of body joints. <br>
 
 We can make upper leg direction vectors with our thighs through the positions of pelvis and our knees. <br>
-The direction vectors made up of shoulders, elbows, and hands let you know in which direction your hand is stretched or bended.
+The direction vectors made up of shoulders, elbows, and hands let you know in which direction your hand is stretched or bended. <br>
 
 <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/2620b4a0-53bc-44cb-9775-1b5c04e2c144" width = "45%" height = "45%"> <br>
 > Making vectors with some joints.
