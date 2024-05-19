@@ -644,19 +644,11 @@ With hand state and hand position, we can control cursor and make it work simila
 
 <!-- 7 -->
 
-### 7. Finish
-
-
-Working on this project, I submitted a game of interface (NUI) and unreal engine using that function as my graduation work.
-
-
+### 7. Finish & Ref
 
 <br>
-<br>
-
-### 8. References
-
-(위의 인용 자료, 참고 사이트 등 링크 첨부)
-With the professor's feedback, if there is a condition for further research on related topics, I would like to compare the existing interface equipment (keyboard, mouse, controller, etc.) with the interface of this project to study which device is more efficient.
-
-This was my first post on GitHub. Thank you for your interest.
+This project is about using Kinect SDK to use data from Kinect sensors in Unreal Engine. <br>
+Using C++ codes and blueprints, we processed the sensor's body tracking data and used it in various ways. <br>
+The position data of the body joint may be used to determine the user's gesture, and the orientation data may be used to project the user's current body state to a character in the virtual environment. <br>
+In other words, people in the real world can do various activities (interactions between actors) through characters in the virtual environment. <br>
+I am not good at English, but thank you very much for your interest. <br>
