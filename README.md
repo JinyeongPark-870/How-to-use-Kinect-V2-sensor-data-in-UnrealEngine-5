@@ -93,7 +93,7 @@ You can add various modules, link library files and set paths with it. <br>
 <br>
 build.cs codes <br>
 
-Write **build.cs** code to use **Kinect.lib** that you found earlier. <br>
+Write **build.cs** code to use library **Kinect.lib**. <br>
 
 > **SensorGame** is my example Unreal project's name <br>
 <img src="https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/ac56fbf8-160b-4cb7-b6d1-565e8f053826" width="70%" height="70%"> <br>
@@ -373,7 +373,7 @@ void AKinectBodyActor::Tick(float DeltaTime)
 
 	initialize();
 
-	if (!I_BodyFrameReader) {
+	if (!i_BodyFrameReader) {
 		//UE_LOG(LogTemp, Display, TEXT("- Kinect Actor - Body Frame Reader Failed"));
 		return;
 	}
