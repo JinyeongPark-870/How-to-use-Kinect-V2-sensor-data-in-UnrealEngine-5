@@ -640,7 +640,7 @@ With hand state and hand position, we can control cursor and make it work simila
 
 <!-- 7 -->
 
-### 7. Finish & Ref
+### 7. Finish
 
 <br>
 This project is about using Kinect SDK to use data from Kinect sensors in Unreal Engine. <br>
