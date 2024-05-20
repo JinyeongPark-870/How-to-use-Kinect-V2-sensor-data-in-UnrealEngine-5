@@ -121,7 +121,7 @@ public string ProjectRoot
 
 
 > In my way, I put library file in project's binary folder then, load **.lib** file with **build.cs** <br>
-> Copy and paste each files into the project's source folder (the same location as the actor you want to use). <br>
+> Copy and paste each files into the project's source folder. <br>
 
 
 <br>
