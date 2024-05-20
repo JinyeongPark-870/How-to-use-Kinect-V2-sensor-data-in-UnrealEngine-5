@@ -147,8 +147,8 @@ header file codes <br>
 <br>
 
 > Declare a structure for storing body tracking data(Position and Orientation values) <br>
-> **Location** : Vector (X, Y, Z) <br>
-> **Orientation** : Rotator (X, Y, Z, W) <br>
+> **Location** : Vector (x, y, z) <br>
+> **Orientation** : Rotator (x, y, z, w) <br>
 ```C++
 USTRUCT(BlueprintType)
 struct FKinectJointTransform {
