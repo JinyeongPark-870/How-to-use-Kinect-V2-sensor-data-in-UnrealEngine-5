@@ -44,7 +44,7 @@ You can find out various Functions, Structures, etc available in SDK on this sit
 
 <!-- 2 -->
 
-### 2. How to find path to the relevant files (.lib, .h)
+### <h1> 2. How to find path to the relevant files (.lib, .h) </h1>
 
 <br>
 
@@ -64,7 +64,7 @@ This path is necessary when using the Unreal Engine later. <br>
 
 <!-- 3 -->
 
-### 3. Create Unreal project and Actor with C++ (.h/.cpp)
+### <h1> 3. Create Unreal project and Actor with C++ (.h/.cpp) </h1>
 <br>
 
 Run Unreal Engine and create a new game project (template is irrelevant) <br>
@@ -81,7 +81,7 @@ Create default Actor class or other Actor class that inherits default Actor. <br
 
 <!-- 4 -->
 
-### 4. Descriptions of build.cs, ~Actor.h/.cpp File
+### <h1> 4. Descriptions of build.cs, ~Actor.h/.cpp File </h1>
 
 <br>
 A simple description of the generated source files. <br>
@@ -493,7 +493,7 @@ You can find out the results and errors with HRESULT function. <br>
 
 <!-- 5 -->
 
-### 5. Apply written code (actor) in the Unreal Engine, create Blueprint Actor based on C++ Actor and place on the level
+### <h1> 5. Apply written code (actor) in the Unreal Engine, create Blueprint Actor based on C++ Actor and place on the level </h1>
 
 In Unreal Engine, we can make Blueprint Actor based on C++ Actor. <br>
 
@@ -541,7 +541,7 @@ At the current level (map), you can call the method of the spawned actor(we made
 
 <!-- 6 -->
 
-### 6. Examples of using kinect Sensor data
+### <h1> 6. Examples of using kinect Sensor data </h1>
 
 Here are several ways to use sensor data. <br>
 We can use two types of data(Joint Position and Joint Orientation). <br>
@@ -640,7 +640,7 @@ With hand state and hand position, we can control cursor and make it work simila
 
 <!-- 7 -->
 
-### 7. Finish
+### <h1> 7. Finish </h1>
 
 <br>
 This project is about using Kinect SDK to use data from Kinect sensors in Unreal Engine. <br>
