@@ -126,7 +126,7 @@ public string ProjectRoot
 
 <br>
 
-<h2> header file codes </h2><br>
+<h2> header file codes </h2>
 
 > Must include **Kinect.h** at actor's header file first.
 
@@ -254,8 +254,7 @@ class SENSORGAME_API AKinectBodyActor : public AActor
 
 #
 
-
-<br> <h2> .cpp codes </h2> <br>
+<br> <h2> .cpp codes </h2>
 
 
 <br>
