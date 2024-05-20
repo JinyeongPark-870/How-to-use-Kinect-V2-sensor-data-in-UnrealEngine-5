@@ -85,7 +85,9 @@ Create default Actor class or other Actor class that inherits default Actor. <br
 
 <br>
 A simple description of the generated source files. <br>
+
 **Build.cs** file is related to the project build. <br>
+
 You can add various modules, link library files and set paths with it. <br>
 
 **.h .cpp** files are the header file and source file of the actor using in the project. <br>
