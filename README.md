@@ -55,7 +55,7 @@ This path is necessary when using the Unreal Engine later. <br>
 => C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\ <br>
 
 > We can find Kinect SDK's **.lib** , **.h** files. <br>
-> <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/3a5f6d79-c8ec-4c1d-ad44-bb0860e4b94b" width = "50%" height = "50%">
+> <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/bfd0c6b1-ff9c-4bb9-8bb9-62c90b533ef7" width = "50%" height = "50%"> <br>
 > <img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/e45f7002-2639-435c-b4f3-a47ab3b9303b" width = "50%" height = "50%"> <br>
 > We use Kinect.lib , Kinect.h , Kinect.Face.h , Kinect.INPC.h
 
