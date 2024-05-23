@@ -630,7 +630,7 @@ With hand state and hand position, we can control cursor and make it work simila
 
 <br>
 
-<img src = "https://github.com/JinyeongPark-870/How-to-use-Kinect-V2-sensor-data-in-Unreal-Engine-5/assets/4387404/d8574d76-0bcc-4804-abd0-8b5e293ded28" width = "45%" height = "45%"> <br>
+<img src = "https://github.com/JinyeongPark-870/Simple-Button-System-In-UnrealEngine-Blueprint/assets/4387404/825632d7-1a2b-4394-9734-e9cc8383fe65" width = "45%" height = "45%"> <br>
 > Example of using hand state data and click function with custom button actor. <br>
 > I made a function that allows the actor which overlapping with the cursor to react when hand is closed(clench). <br>
 > Delay about 1 second. <br>
